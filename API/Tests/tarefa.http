@@ -1,0 +1,31 @@
+@base_url = https://localhost:7015/api/tarefa
+
+### Listar Tarefas ###
+GET {{base_url}}/listar
+
+### Criar Tarefa ###
+POST {{base_url}}/cadastrar
+Content-Type: application/json
+
+{
+  "Titulo": "Teste Status",
+  "Descricao": "1. Fazer lista de compras: leite,vegetais,carne,ovo",
+  "CategoriaId": 4,
+  "Status": "Não iniciada",
+}
+
+### Atualizar Tarefa ###
+PATCH {{base_url}}/atualizar/4
+Content-Type: application/json
+
+{
+    "Status": "Concluída"
+}
+
+
+### Listar tarefas não concluídas ###
+GET {{base_url}}/listar/naoconcluidas
+
+### Listar tarefas concluídas ###
+GET {{base_url}}/listar/concluidas
+
